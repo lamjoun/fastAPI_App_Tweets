@@ -34,7 +34,7 @@ jobs:
       - name: Run FastAPI
         run: |
           nohup uvicorn src.app1:app --host 0.0.0.0 --port 8001 &
-          sleep 5 # wait for the server to start
+          sleep 5 #  -- wait for the server to start --
 
       - name: Test FastAPI
         run: |
