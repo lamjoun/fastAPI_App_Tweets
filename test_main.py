@@ -11,7 +11,7 @@ except Exception as e:
     pass
     
 
-url = 'http://localhost:8001/predict'
+url = 'http://localhost:8000/predict'
 
 input_data_test = {
     "text": "it's a loveling%%!!!!!"
