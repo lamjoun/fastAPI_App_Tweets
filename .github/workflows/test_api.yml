@@ -39,7 +39,7 @@ jobs:
       - name: Test FastAPI
         run: |
           # Positive sentiment test
-          python test_main.py
+          python test_api.py
           # Negative sentiment test
-          python test_main.py N
+          python test_api.py N
           

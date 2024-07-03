@@ -4,3 +4,4 @@ httpx==0.27.0
 nltk==3.8.1
 tensorflow==2.15.0
 pandas==2.0.3
+pytest==8.2.2
