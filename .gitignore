@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 tmp/
+_local_model_files/
 *.py[cod]
 *$py.class
 

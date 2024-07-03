@@ -14,7 +14,7 @@ def test_predict_sentiment() -> None:
     model_file = "model_files/model.keras"
     # Check if the file exists : gitHubAction case
     if not os.path.isfile(model_file):
-        model_file = "tmp/model_files/model7.keras"
+        model_file = "_local_model_files/model.keras"
     #
     model_loader = ModelLoader(model_file, tokenizer_file)
     #

@@ -27,7 +27,7 @@ model_file = "model_files/model.keras"
 
 # Check if the model file exists (GitHub Action case)
 if not os.path.isfile(model_file):
-    model_file = "tmp/model_files/model7.keras"
+    model_file = "_local_model_files/model.keras"
 
 # Create instances of necessary classes
 preprocessor = TextPreprocessor()
