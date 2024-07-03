@@ -30,10 +30,14 @@ jobs:
           
       - name: Download model from S3
         run: aws s3 cp s3://bucketawstestrl1/test1/model.keras ./model_files/model.keras
-        
+  
+      - name: Run pytest
+        run: pytest 
+          
       - name: Run FastAPI
         run: |
-          nohup uvicorn src.app:app --host 0.0.0.0 --port 8000 &
+          # nohup uvicorn src.app:app --host 0.0.0.0 --port 8000 &
+          python main.py
           sleep 30 # wait for the server to start
 
       - name: Test FastAPI
