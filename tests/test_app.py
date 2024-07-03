@@ -1,9 +1,8 @@
-from typing import Any, Dict
-
 from fastapi.testclient import TestClient
 from src.app import app
 
 client = TestClient(app)
+
 
 def test_read_root() -> None:
     """
@@ -18,6 +17,7 @@ def test_read_root() -> None:
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {"Hello": "World.....!!!!"}
+
 
 def test_prediction() -> None:
     """

@@ -1,7 +1,7 @@
 import os
 from src.model_loader import ModelLoader
 from src.text_preprocessing import TextPreprocessor
-from typing import Callable, Dict, Union
+
 
 def test_predict_sentiment() -> None:
     """
@@ -10,11 +10,11 @@ def test_predict_sentiment() -> None:
     Raises:
         AssertionError: If the predicted result does not contain 'sentiment' or 'score'.
     """
-    tokenizer_file="model_files/tokenizer.pickle"
-    model_file="model_files/model.keras"
+    tokenizer_file = "model_files/tokenizer.pickle"
+    model_file = "model_files/model.keras"
     # Check if the file exists : gitHubAction case
     if not os.path.isfile(model_file):
-        model_file="tmp/model_files/model7.keras"
+        model_file = "tmp/model_files/model7.keras"
     #
     model_loader = ModelLoader(model_file, tokenizer_file)
     #
@@ -23,6 +23,7 @@ def test_predict_sentiment() -> None:
     result = model_loader.predict_sentiment(text, preprocessor)
     assert "sentiment" in result, f"Expected 'sentiment' in result but got: {result}"
     assert "score" in result, f"Expected 'score' in result but got: {result}"
+
 
 if __name__ == "__main__":
     test_predict_sentiment()

@@ -1,8 +1,6 @@
 import pickle
-from typing import Callable, Union
 import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from pydantic import BaseModel, Field, ValidationError, validator
 
 
 class ModelLoader:
@@ -46,14 +44,15 @@ class ModelLoader:
         Returns:
             object: Loaded tokenizer object.
         """
-        with open(self.tokenizer_path, 'rb') as handle:
+        with open(self.tokenizer_path, "rb") as handle:
             try:
                 tokenizer = pickle.load(handle)
             except ModuleNotFoundError as e:
-                if 'keras.src.preprocessing' in str(e):
+                if "keras.src.preprocessing" in str(e):
                     import keras
+
                     keras.utils.get_custom_objects()
-                    with open(self.tokenizer_path, 'rb') as handle:
+                    with open(self.tokenizer_path, "rb") as handle:
                         tokenizer = pickle.load(handle)
                 else:
                     raise e
@@ -62,14 +61,17 @@ class ModelLoader:
     # preprocessor: Callable[[str], str]
     def predict_sentiment(self, text: str, preprocessor) -> dict:
         """
-        Predicts sentiment (Positive/Negative) and sentiment score for the input text.
+        Predicts sentiment (Positive/Negative) and sentiment score
+        for the input text.
 
         Args:
             text (str): Input text to predict sentiment.
-            preprocessor (Callable[[str], str]): Preprocessing function for text.
+            preprocessor (Callable[[str], str]): Preprocessing function
+            for text.
 
         Returns:
-            dict: Dictionary containing predicted sentiment ("Positive" or "Negative") and sentiment score.
+            dict: Dictionary containing predicted sentiment
+            ("Positive" or "Negative") and sentiment score.
         """
         processed_text = preprocessor.preprocess(text)
         sequence = self.tokenizer.texts_to_sequences([processed_text])

@@ -1,0 +1,14 @@
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.5.0 # la dernière version stable de ruff !!
+    hooks:
+        # Run the linter.
+        - id: ruff
+        # Run the formatter.
+        - id: ruff-format
+
+  - repo: https://github.com/psf/black
+    rev: 24.4.2 # la dernière version stable de black !!
+    hooks:
+        - id: black
