@@ -37,7 +37,15 @@ jobs:
       - name: Run FastAPI
         run: |
           nohup python main.py &
-          sleep 5 # wait for the server to start
+          sleep 10 # wait for the server to start
+
+      - name: Check FastAPI server status
+        run: |
+          for i in {1..10}; do
+            curl -sSf http://localhost:8000/ && break
+            echo "Waiting for the server to start..."
+            sleep 5
+          done
 
       - name: Test FastAPI
         run: |
@@ -45,4 +53,4 @@ jobs:
           python test_api.py
           # Negative sentiment test
           python test_api.py N
-          
+
