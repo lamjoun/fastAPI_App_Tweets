@@ -57,15 +57,10 @@ jobs:
       - name: Preps Postman Tests  - Check Node.js version
         run: node --version
 
-      - name: Preps Postman Tests  - Install Node.js 16.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
-
       - name: Preps Postman Tests  - Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: 'v18.20.3'
 
       - name: Preps Postman Tests - Install Newman
         run: npm install -g newman
