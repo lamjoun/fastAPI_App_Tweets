@@ -54,12 +54,20 @@ jobs:
           # Negative sentiment test
           python test_api.py N
 
-      - name: Prep Postman Test  - Set up Node.js
+      - name: Preps Postman Tests  - Check Node.js version
+        run: node --version
+
+      - name: Preps Postman Tests  - Install Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+
+      - name: Preps Postman Tests  - Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
 
-      - name: Prep Postman Test - Install Newman
+      - name: Preps Postman Tests - Install Newman
         run: npm install -g newman
 
       - name: Run Postman tests
