@@ -28,11 +28,9 @@
 				"header": [],
 				"url": {
 					"raw": "http://localhost:8000/",
-					"protocol": "https",
+					"protocol": "http",
 					"host": [
-						"91bc-35-247-22-117",
-						"ngrok-free",
-						"app"
+						"localhost",
 					],
 					"path": [
 						""
@@ -77,11 +75,9 @@
 				},
 				"url": {
 					"raw": "http://localhost:8000/predict",
-					"protocol": "https",
+					"protocol": "http",
 					"host": [
-						"91bc-35-247-22-117",
-						"ngrok-free",
-						"app"
+						"localhost",
 					],
 					"path": [
 						"predict"
@@ -103,7 +99,7 @@
 							"\r",
 							"pm.test(\"Check sentiment\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.sentiment).to.eql(\"Positive\");\r",
+							"    pm.expect(jsonData.sentiment).to.eql(\"Negative\");\r",
 							"});\r",
 							""
 						],
@@ -126,11 +122,9 @@
 				},
 				"url": {
 					"raw": "http://localhost:8000/predict",
-					"protocol": "https",
+					"protocol": "http",
 					"host": [
-						"91bc-35-247-22-117",
-						"ngrok-free",
-						"app"
+						"localhost",
 					],
 					"path": [
 						"predict"
