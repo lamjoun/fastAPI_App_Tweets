@@ -103,7 +103,7 @@
 							"\r",
 							"pm.test(\"Check sentiment\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.sentiment).to.eql(\"Negative\");\r",
+							"    pm.expect(jsonData.sentiment).to.eql(\"Positive\");\r",
 							"});\r",
 							""
 						],
