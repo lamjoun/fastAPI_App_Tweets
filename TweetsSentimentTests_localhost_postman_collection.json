@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "91c4bb44-6e38-4179-b06d-1bb3e466ae38",
-		"name": "Tweets Sentiment Tests",
+		"_postman_id": "906ba5a7-6ef6-4aef-a044-e0fe2bf7c9f5",
+		"name": "TweetsSentimentTests_localhost",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "36752243"
 	},
@@ -30,8 +30,9 @@
 					"raw": "http://localhost:8000/",
 					"protocol": "http",
 					"host": [
-						"localhost",
+						"localhost"
 					],
+					"port": "8000",
 					"path": [
 						""
 					]
@@ -77,8 +78,9 @@
 					"raw": "http://localhost:8000/predict",
 					"protocol": "http",
 					"host": [
-						"localhost",
+						"localhost"
 					],
+					"port": "8000",
 					"path": [
 						"predict"
 					]
@@ -124,8 +126,9 @@
 					"raw": "http://localhost:8000/predict",
 					"protocol": "http",
 					"host": [
-						"localhost",
+						"localhost"
 					],
+					"port": "8000",
 					"path": [
 						"predict"
 					]

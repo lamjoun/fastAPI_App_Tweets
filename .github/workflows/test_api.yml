@@ -66,4 +66,4 @@ jobs:
         run: npm install -g newman
 
       - name: Run Postman tests
-        run: newman run TweetsSentimentTests_postman_collection2.1.json --reporters cli,junit --reporter-junit-export newman-results.xml
+        run: newman run TweetsSentimentTests_localhost_postman_collection.json --reporters cli,junit --reporter-junit-export newman-results.xml
