@@ -41,7 +41,7 @@ jobs:
 
       - name: Check FastAPI server status
         run: |
-          for i in {1..10}; do
+          for i in {1..20}; do
             curl -sSf http://localhost:8000/ && break
             echo "Waiting for the server to start..."
             sleep 5
@@ -54,3 +54,13 @@ jobs:
           # Negative sentiment test
           python test_api.py N
 
+      - name: Prep Postman Test  - Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Prep Postman Test - Install Newman
+        run: npm install -g newman
+
+      - name: Run Postman tests
+        run: newman run TweetsSentimentTests_postman_collection2.1.json --reporters cli,junit --reporter-junit-export newman-results.xml
